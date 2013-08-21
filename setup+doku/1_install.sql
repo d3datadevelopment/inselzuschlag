@@ -1,0 +1,88 @@
+
+
+UPDATE `oxcountry` SET `OXTITLE` = 'Deutschland (ohne Inseln)',
+`OXTITLE_1` = 'Germany (except isles)' WHERE `OXID` = 'a7c40f631fc920687.20179984' LIMIT 1 ;
+
+INSERT INTO `oxcountry` VALUES ('a7c40f631fc920687.20179985', 1, 'Deutschland (nur Inseln)', 'DE', 'DEU', '276', 9999, 'EU1', '', 'Germany (isles only)', '', '', 'EU1', '', '', '', '', '', 1);
+
+INSERT INTO `oxstates` VALUES ('BY-I', 'a7c40f631fc920687.20179985', 'Bayern', 'BY', 'Bavaria', '', '');
+INSERT INTO `oxstates` VALUES ('HH-I', 'a7c40f631fc920687.20179985', 'Hamburg', 'HH', 'Hamburg', '', '');
+INSERT INTO `oxstates` VALUES ('MV-I', 'a7c40f631fc920687.20179985', 'Mecklenburg-Vorpommern', 'MV', 'Mecklenburg-Western Pomerania', '', '');
+INSERT INTO `oxstates` VALUES ('NI-I', 'a7c40f631fc920687.20179985', 'Niedersachsen', 'NI', 'Lower Saxony', '', '');
+INSERT INTO `oxstates` VALUES ('SH-I', 'a7c40f631fc920687.20179985', 'Schleswig-Holstein', 'SH', 'Schleswig-Holstein', '', '');
+
+
+# verwendete PLZ mit Ortsangabe, diesen PLZ können noch weitere Orte zugeordnet sein
+# fügen Sie nach Ihrem Bedarf weitere PLZ hinzu oder entfernen Sie diese aus der später aufgeführten Abfrage, 
+# bevor Sie diese ausführen
+
+CREATE TABLE `d3isles` (
+  `OXID` char(32) collate latin1_general_ci NOT NULL,
+  `OXCOUNTRYID` char(32) collate latin1_general_ci NOT NULL,
+  `OXISLESCOUNTRYID` char(32) collate latin1_general_ci NOT NULL,
+  `OXZIP` varchar(16) NOT NULL,
+  `OXDESC` varchar(100) NOT NULL,
+  PRIMARY KEY  (`OXID`)
+) ENGINE=MyISAM COMMENT='Inseln';
+
+INSERT INTO `d3isles` ( `OXID` , `OXCOUNTRYID` , `OXISLESCOUNTRYID` , `OXZIP` , `OXDESC` ) VALUES 
+(MD5(RAND()), 'a7c40f631fc920687.20179984', 'a7c40f631fc920687.20179985', '18565', 'Fährinsel'),
+(MD5(RAND()), 'a7c40f631fc920687.20179984', 'a7c40f631fc920687.20179985', '25845', 'Elisabeth-Sophien-Koog'),
+(MD5(RAND()), 'a7c40f631fc920687.20179984', 'a7c40f631fc920687.20179985', '25846', 'Pellworm'),
+(MD5(RAND()), 'a7c40f631fc920687.20179984', 'a7c40f631fc920687.20179985', '25847', 'Pellworm'),
+(MD5(RAND()), 'a7c40f631fc920687.20179984', 'a7c40f631fc920687.20179985', '25849', 'Pellworm'),
+(MD5(RAND()), 'a7c40f631fc920687.20179984', 'a7c40f631fc920687.20179985', '25859', 'Hooge'),
+(MD5(RAND()), 'a7c40f631fc920687.20179984', 'a7c40f631fc920687.20179985', '25863', 'Langeneß'),
+(MD5(RAND()), 'a7c40f631fc920687.20179984', 'a7c40f631fc920687.20179985', '25869', 'Gröde'),
+(MD5(RAND()), 'a7c40f631fc920687.20179984', 'a7c40f631fc920687.20179985', '25929', 'Föhr'),
+(MD5(RAND()), 'a7c40f631fc920687.20179984', 'a7c40f631fc920687.20179985', '25930', 'Föhr'),
+(MD5(RAND()), 'a7c40f631fc920687.20179984', 'a7c40f631fc920687.20179985', '25931', 'Föhr'),
+(MD5(RAND()), 'a7c40f631fc920687.20179984', 'a7c40f631fc920687.20179985', '25932', 'Föhr'),
+(MD5(RAND()), 'a7c40f631fc920687.20179984', 'a7c40f631fc920687.20179985', '25933', 'Föhr'),
+(MD5(RAND()), 'a7c40f631fc920687.20179984', 'a7c40f631fc920687.20179985', '25938', 'Wyk'),
+(MD5(RAND()), 'a7c40f631fc920687.20179984', 'a7c40f631fc920687.20179985', '25939', 'Föhr'),
+(MD5(RAND()), 'a7c40f631fc920687.20179984', 'a7c40f631fc920687.20179985', '25940', 'Amrum'),
+(MD5(RAND()), 'a7c40f631fc920687.20179984', 'a7c40f631fc920687.20179985', '25941', 'Amrum'),
+(MD5(RAND()), 'a7c40f631fc920687.20179984', 'a7c40f631fc920687.20179985', '25942', 'Amrum'),
+(MD5(RAND()), 'a7c40f631fc920687.20179984', 'a7c40f631fc920687.20179985', '25946', 'Nebel'),
+(MD5(RAND()), 'a7c40f631fc920687.20179984', 'a7c40f631fc920687.20179985', '25947', 'Amrum'),
+(MD5(RAND()), 'a7c40f631fc920687.20179984', 'a7c40f631fc920687.20179985', '25948', 'Amrum'),
+(MD5(RAND()), 'a7c40f631fc920687.20179984', 'a7c40f631fc920687.20179985', '25949', 'Amrum'),
+(MD5(RAND()), 'a7c40f631fc920687.20179984', 'a7c40f631fc920687.20179985', '25952', 'Amrum'),
+(MD5(RAND()), 'a7c40f631fc920687.20179984', 'a7c40f631fc920687.20179985', '25953', 'Amrum'),
+(MD5(RAND()), 'a7c40f631fc920687.20179984', 'a7c40f631fc920687.20179985', '25954', 'Amrum'),
+(MD5(RAND()), 'a7c40f631fc920687.20179984', 'a7c40f631fc920687.20179985', '25955', 'Amrum'),
+(MD5(RAND()), 'a7c40f631fc920687.20179984', 'a7c40f631fc920687.20179985', '25961', 'Westerland'),
+(MD5(RAND()), 'a7c40f631fc920687.20179984', 'a7c40f631fc920687.20179985', '25962', 'Westerland'),
+(MD5(RAND()), 'a7c40f631fc920687.20179984', 'a7c40f631fc920687.20179985', '25963', 'Westerland'),
+(MD5(RAND()), 'a7c40f631fc920687.20179984', 'a7c40f631fc920687.20179985', '25964', 'Westerland'),
+(MD5(RAND()), 'a7c40f631fc920687.20179984', 'a7c40f631fc920687.20179985', '25965', 'Westerland'),
+(MD5(RAND()), 'a7c40f631fc920687.20179984', 'a7c40f631fc920687.20179985', '25966', 'Westerland'),
+(MD5(RAND()), 'a7c40f631fc920687.20179984', 'a7c40f631fc920687.20179985', '25967', 'Westerland'),
+(MD5(RAND()), 'a7c40f631fc920687.20179984', 'a7c40f631fc920687.20179985', '25968', 'Westerland'),
+(MD5(RAND()), 'a7c40f631fc920687.20179984', 'a7c40f631fc920687.20179985', '25969', 'Westerland'),
+(MD5(RAND()), 'a7c40f631fc920687.20179984', 'a7c40f631fc920687.20179985', '25970', 'Westerland'),
+(MD5(RAND()), 'a7c40f631fc920687.20179984', 'a7c40f631fc920687.20179985', '25980', 'Westerland'),
+(MD5(RAND()), 'a7c40f631fc920687.20179984', 'a7c40f631fc920687.20179985', '25985', 'Sylt (Ost)'),
+(MD5(RAND()), 'a7c40f631fc920687.20179984', 'a7c40f631fc920687.20179985', '25986', 'Sylt (Ost)'),
+(MD5(RAND()), 'a7c40f631fc920687.20179984', 'a7c40f631fc920687.20179985', '25988', 'Sylt (Rantrum)'),
+(MD5(RAND()), 'a7c40f631fc920687.20179984', 'a7c40f631fc920687.20179985', '25989', 'Sylt (List)'),
+(MD5(RAND()), 'a7c40f631fc920687.20179984', 'a7c40f631fc920687.20179985', '25990', 'Sylt (List)'),
+(MD5(RAND()), 'a7c40f631fc920687.20179984', 'a7c40f631fc920687.20179985', '25992', 'Wenningstedt'),
+(MD5(RAND()), 'a7c40f631fc920687.20179984', 'a7c40f631fc920687.20179985', '25993', 'Wenningstedt'),
+(MD5(RAND()), 'a7c40f631fc920687.20179984', 'a7c40f631fc920687.20179985', '25994', 'Wenningstedt'),
+(MD5(RAND()), 'a7c40f631fc920687.20179984', 'a7c40f631fc920687.20179985', '25996', 'Wenningstedt'),
+(MD5(RAND()), 'a7c40f631fc920687.20179984', 'a7c40f631fc920687.20179985', '25997', 'Hörnum'),
+(MD5(RAND()), 'a7c40f631fc920687.20179984', 'a7c40f631fc920687.20179985', '25998', 'Wenningstedt'),
+(MD5(RAND()), 'a7c40f631fc920687.20179984', 'a7c40f631fc920687.20179985', '25999', 'Kampen'),
+(MD5(RAND()), 'a7c40f631fc920687.20179984', 'a7c40f631fc920687.20179985', '26465', 'Baltrum'),
+(MD5(RAND()), 'a7c40f631fc920687.20179984', 'a7c40f631fc920687.20179985', '26474', 'Spiekeroog'),
+(MD5(RAND()), 'a7c40f631fc920687.20179984', 'a7c40f631fc920687.20179985', '26486', 'Wangerooge'),
+(MD5(RAND()), 'a7c40f631fc920687.20179984', 'a7c40f631fc920687.20179985', '26548', 'Norderney'),
+(MD5(RAND()), 'a7c40f631fc920687.20179984', 'a7c40f631fc920687.20179985', '26571', 'Juist'),
+(MD5(RAND()), 'a7c40f631fc920687.20179984', 'a7c40f631fc920687.20179985', '26579', 'Baltrum'),
+(MD5(RAND()), 'a7c40f631fc920687.20179984', 'a7c40f631fc920687.20179985', '26757', 'Borkum'),
+(MD5(RAND()), 'a7c40f631fc920687.20179984', 'a7c40f631fc920687.20179985', '27498', 'Helgoland'),
+(MD5(RAND()), 'a7c40f631fc920687.20179984', 'a7c40f631fc920687.20179985', '27499', 'Hamburg-Insel Neuwerk'),
+(MD5(RAND()), 'a7c40f631fc920687.20179984', 'a7c40f631fc920687.20179985', '83209', 'Herrenchiemsee'),
+(MD5(RAND()), 'a7c40f631fc920687.20179984', 'a7c40f631fc920687.20179985', '83256', 'Frauenchiemsee');
