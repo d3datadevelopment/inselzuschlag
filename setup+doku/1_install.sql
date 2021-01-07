@@ -1,31 +1,28 @@
+UPDATE oxcountry SET OXTITLE = 'Deutschland (ohne Inseln)',
+                       OXTITLE_1 = 'Germany (except isles)' WHERE `OXID` = 'a7c40f631fc920687.20179984' LIMIT 1 ;
 
+INSERT INTO oxcountry (OXID, OXACTIVE, OXTITLE, OXISOALPHA2, OXISOALPHA3, OXUNNUM3, OXVATINPREFIX, OXORDER, OXSHORTDESC, OXLONGDESC, OXTITLE_1, OXTITLE_2, OXTITLE_3, OXSHORTDESC_1, OXSHORTDESC_2, OXSHORTDESC_3, OXLONGDESC_1, OXLONGDESC_2, OXLONGDESC_3, OXVATSTATUS, OXTIMESTAMP)
+VALUES ('a7c40f631fc920687.20179985', 1, 'Deutschland (nur Inseln)', 'DE', 'DEU', '276', 'DE', 9999, 'EU1', '', 'Germany (isles only)', '', '', 'EU1', '', '', '', '', '', 1, NOW());
 
-UPDATE `oxcountry` SET `OXTITLE` = 'Deutschland (ohne Inseln)',
-`OXTITLE_1` = 'Germany (except isles)' WHERE `OXID` = 'a7c40f631fc920687.20179984' LIMIT 1 ;
+INSERT INTO oxstates (OXID, OXCOUNTRYID, OXTITLE, OXISOALPHA2, OXTITLE_1, OXTITLE_2, OXTITLE_3, OXTIMESTAMP) VALUES ('BY-I', 'a7c40f631fc920687.20179985', 'Bayern', 'BY', 'Bavaria', '', '', NOW());
+INSERT INTO oxstates (OXID, OXCOUNTRYID, OXTITLE, OXISOALPHA2, OXTITLE_1, OXTITLE_2, OXTITLE_3, OXTIMESTAMP) VALUES ('HH-I', 'a7c40f631fc920687.20179985', 'Hamburg', 'HH', 'Hamburg', '', '', NOW());
+INSERT INTO oxstates (OXID, OXCOUNTRYID, OXTITLE, OXISOALPHA2, OXTITLE_1, OXTITLE_2, OXTITLE_3, OXTIMESTAMP) VALUES ('MV-I', 'a7c40f631fc920687.20179985', 'Mecklenburg-Vorpommern', 'MV', 'Mecklenburg-Western Pomerania', '', '', NOW());
+INSERT INTO oxstates (OXID, OXCOUNTRYID, OXTITLE, OXISOALPHA2, OXTITLE_1, OXTITLE_2, OXTITLE_3, OXTIMESTAMP) VALUES ('NI-I', 'a7c40f631fc920687.20179985', 'Niedersachsen', 'NI', 'Lower Saxony', '', '', NOW());
+INSERT INTO oxstates (OXID, OXCOUNTRYID, OXTITLE, OXISOALPHA2, OXTITLE_1, OXTITLE_2, OXTITLE_3, OXTIMESTAMP) VALUES ('SH-I', 'a7c40f631fc920687.20179985', 'Schleswig-Holstein', 'SH', 'Schleswig-Holstein', '', '', NOW());
 
-INSERT INTO `oxcountry` VALUES ('a7c40f631fc920687.20179985', 1, 'Deutschland (nur Inseln)', 'DE', 'DEU', '276', 9999, 'EU1', '', 'Germany (isles only)', '', '', 'EU1', '', '', '', '', '', 1);
-
-INSERT INTO `oxstates` VALUES ('BY-I', 'a7c40f631fc920687.20179985', 'Bayern', 'BY', 'Bavaria', '', '');
-INSERT INTO `oxstates` VALUES ('HH-I', 'a7c40f631fc920687.20179985', 'Hamburg', 'HH', 'Hamburg', '', '');
-INSERT INTO `oxstates` VALUES ('MV-I', 'a7c40f631fc920687.20179985', 'Mecklenburg-Vorpommern', 'MV', 'Mecklenburg-Western Pomerania', '', '');
-INSERT INTO `oxstates` VALUES ('NI-I', 'a7c40f631fc920687.20179985', 'Niedersachsen', 'NI', 'Lower Saxony', '', '');
-INSERT INTO `oxstates` VALUES ('SH-I', 'a7c40f631fc920687.20179985', 'Schleswig-Holstein', 'SH', 'Schleswig-Holstein', '', '');
-
-
-# verwendete PLZ mit Ortsangabe, diesen PLZ können noch weitere Orte zugeordnet sein
-# fügen Sie nach Ihrem Bedarf weitere PLZ hinzu oder entfernen Sie diese aus der später aufgeführten Abfrage, 
+# verwendete PLZ mit Ortsangabe, diese PLZ können noch weitere Orte zugeordnet sein
+# fügen Sie nach Ihrem Bedarf weitere PLZ hinzu oder entfernen Sie diese aus der später aufgeführten Abfrage,
 # bevor Sie diese ausführen
 
-CREATE TABLE `d3isles` (
-  `OXID` char(32) collate latin1_general_ci NOT NULL,
-  `OXCOUNTRYID` char(32) collate latin1_general_ci NOT NULL,
-  `OXISLESCOUNTRYID` char(32) collate latin1_general_ci NOT NULL,
-  `OXZIP` varchar(16) NOT NULL,
-  `OXDESC` varchar(100) NOT NULL,
-  PRIMARY KEY  (`OXID`)
+CREATE TABLE d3isles (
+                           OXID char(32) collate latin1_general_ci NOT NULL,
+                           OXCOUNTRYID char(32) collate latin1_general_ci NOT NULL,
+                           OXISLESCOUNTRYID char(32) collate latin1_general_ci NOT NULL,
+                           OXZIP varchar(16) NOT NULL,
+                           OXDESC varchar(100) NOT NULL,
+                           PRIMARY KEY  (`OXID`)
 ) ENGINE=MyISAM COMMENT='Inseln';
-
-INSERT INTO `d3isles` ( `OXID` , `OXCOUNTRYID` , `OXISLESCOUNTRYID` , `OXZIP` , `OXDESC` ) VALUES 
+INSERT INTO d3isles ( OXID, OXCOUNTRYID, OXISLESCOUNTRYID, OXZIP, OXDESC ) VALUES
 (MD5(RAND()), 'a7c40f631fc920687.20179984', 'a7c40f631fc920687.20179985', '18565', 'Fährinsel'),
 (MD5(RAND()), 'a7c40f631fc920687.20179984', 'a7c40f631fc920687.20179985', '25845', 'Elisabeth-Sophien-Koog'),
 (MD5(RAND()), 'a7c40f631fc920687.20179984', 'a7c40f631fc920687.20179985', '25846', 'Pellworm'),
