@@ -1,5 +1,3 @@
 * text=auto !eol
-setup+doku/1_install.sql -text
-setup+doku/2_zuweisung.sql -text
-setup+doku/Installation.pdf -text
-sources/Inselzuschlag-Installation.docx -text
+1_install.sql -text
+2_zuweisung.sql -text
